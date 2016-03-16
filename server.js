@@ -11,7 +11,9 @@ app.get('/', function(req, res){
 });
 
 app.get('/:hash', function(req, res){
+  var replied = false;
   var timeout = setTimeout(function(){
+    replied = true;
     res.render('index', {
       title: 'Google Doc Publisher',
       hash: req.params.hash,
@@ -23,12 +25,13 @@ app.get('/:hash', function(req, res){
     crawled.on('data', function(data){
       html = html + data.toString();
       var title = (/<title>(.*)<\/title>/.exec(html) || [])[1];
-      if (title) {
+      if (title && !replied) {
+        replied = true;
+        clearTimeout(timeout);
         res.render('index', {
           title: title,
           hash: req.params.hash,
         });
-        clearTimeout(timeout);
       }
     });
   }).end();
