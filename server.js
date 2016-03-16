@@ -10,31 +10,37 @@ app.get('/', function(req, res){
   res.redirect('/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg');
 });
 
-app.get('/:hash', function(req, res){
-  var replied = false;
-  var timeout = setTimeout(function(){
-    replied = true;
-    res.render('index', {
-      title: 'Google Doc Publisher',
-      hash: req.params.hash,
-    });
-  }, 1000);
+var processGoogleHTML = function(html) {
+  return html
+    .replace(/(<script[\s\S]+?<\/script>)/gi, '')
+    .replace(/(<div id="header">[\s\S]+?<\/div>)/, '')
+    .replace(/(<div id="footer">[\s\S]+?<\/div>)/, '')
+};
 
-  https.get('https://docs.google.com/document/d/'+req.params.hash+'/pub', function(crawled) {
+var generateIframe = function(hash, callback) {
+  https.get('https://docs.google.com/document/d/'+hash+'/pub', function(crawled) {
     var html = '';
     crawled.on('data', function(data){
       html = html + data.toString();
-      var title = (/<title>(.*)<\/title>/.exec(html) || [])[1];
-      if (title && !replied) {
-        replied = true;
-        clearTimeout(timeout);
-        res.render('index', {
-          title: title,
-          hash: req.params.hash,
-        });
-      }
+    });
+    crawled.on('end', function(){
+      callback(processGoogleHTML(html));
     });
   }).end();
+}
+
+app.get('/:hash/raw', function(req, res){
+  generateIframe(req.params.hash, function(html){
+    res.write(html);
+    res.end();
+  });
+});
+
+app.get('/:hash', function(req, res){
+  res.render('index', {
+    title: 'Google Doc Publisher',
+    hash: req.params.hash,
+  });
 });
 
 app.listen(app.get('port'), function() {
