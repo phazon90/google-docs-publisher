@@ -1,7 +1,9 @@
 var express = require('express');
 var ejs = require('ejs');
 var https = require('https');
-var memjs = require('memjs')
+var memjs = require('memjs');
+var path = require('path');
+
 
 var app = express();
 var mc = memjs.Client.create()
@@ -9,11 +11,7 @@ var mc = memjs.Client.create()
 app.set('view engine', 'ejs');
 app.set('views', __dirname);
 app.set('port', process.env.PORT || 3000);
-
-app.get('/', function(req, res){
-  res.redirect('/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg');
-});
-
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 var processGoogleHTML = function(html) {
   return html
@@ -62,7 +60,7 @@ app.get('/:hash/raw', function(req, res){
 
 app.get('/:hash', function(req, res){
   getIframeContent(req.params.hash, true, function(html){
-    res.render('index', {
+    res.render('googledoc', {
       title: (html.match(/<title>(.+)<\/title>/i) || [])[0],
       hash: req.params.hash,
     });
