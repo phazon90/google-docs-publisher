@@ -1,0 +1,29 @@
+{
+  "name": "google-doc-publisher",
+  "version": "1.0.0",
+  "description": "Better Google docs publish",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aug-riedinger/google-docs-publisher.git"
+  },
+  "keywords": [
+    "google",
+    "doc",
+    "publish"
+  ],
+  "author": "Augustin Riedinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aug-riedinger/google-docs-publisher/issues"
+  },
+  "homepage": "https://github.com/aug-riedinger/google-docs-publisher#readme",
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
