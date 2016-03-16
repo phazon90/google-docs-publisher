@@ -24,6 +24,7 @@
   "homepage": "https://github.com/aug-riedinger/google-docs-publisher#readme",
   "dependencies": {
     "ejs": "^2.4.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "memjs": "^0.9.0"
   }
 }
