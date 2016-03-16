@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Google Doc Publisher</title>
+    <title><%= title %></title>
     <style type="text/css">
       body {
         background-color: #EEEEEE;
@@ -22,16 +22,5 @@
   </head>
   <body>
   <iframe src="https://docs.google.com/document/d/<%= hash %>/pub" id="googledoc"></iframe>
-  <script type="text/javascript">
-    var iframe = document.getElementById('googledoc');
-    var request = new XMLHttpRequest();
-    request.open('GET', iframe.getAttribute('src'), true);
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        document.title = request.responseText.match(/<title>(.*)<\/title>/)[1];  
-      }
-    };
-    request.send();
-  </script>
   </body>
 </html>

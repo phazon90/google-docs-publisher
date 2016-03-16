@@ -1,5 +1,6 @@
 var express = require('express');
 var ejs = require('ejs');
+var https = require('https');
 var app = express();
 app.set('view engine', 'ejs');
 app.set('views', __dirname);
@@ -10,7 +11,27 @@ app.get('/', function(req, res){
 });
 
 app.get('/:hash', function(req, res){
-  res.render('index', {hash: req.params.hash})
+  var timeout = setTimeout(function(){
+    res.render('index', {
+      title: 'Google Doc Publisher',
+      hash: req.params.hash,
+    });
+  }, 1000);
+
+  https.get('https://docs.google.com/document/d/'+req.params.hash+'/pub', function(crawled) {
+    var html = '';
+    crawled.on('data', function(data){
+      html = html + data.toString();
+      var title = (/<title>(.*)<\/title>/.exec(html) || [])[1];
+      if (title) {
+        res.render('index', {
+          title: title,
+          hash: req.params.hash,
+        });
+        clearTimeout(timeout);
+      }
+    });
+  }).end();
 });
 
 app.listen(app.get('port'), function() {
