@@ -8,7 +8,7 @@
         margin: 0;
       }
       .iframe-wrapper {
-        height: 350vh;
+        height: 500vh;
         margin: auto;
         max-width: 814px;
         width: 100%;
@@ -33,10 +33,11 @@
   <script type="text/javascript">
     var iframe = document.getElementById('googledoc');
     iframe.addEventListener('load', function(e){
+      document.title = iframe.contentWindow.document.title;
       setTimeout(function(){
-        document.title = iframe.contentWindow.document.title;
-        document.getElementsByClassName('iframe-wrapper')[0].setAttribute('style', 'height: '+(iframe.contentWindow.document.body.offsetHeight+20)+'px;');
-      }, 200);
+        var height = iframe.contentWindow.document.body.offsetHeight+40;
+        document.getElementsByClassName('iframe-wrapper')[0].setAttribute('style', 'height: '+height+'px;');
+      }, 1000);
     });
   </script>
   </body>
