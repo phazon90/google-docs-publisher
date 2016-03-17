@@ -11,10 +11,11 @@
       .iframe-wrapper {
         height: 500vh;
         margin: auto;
-        max-width: 814px;
+        max-width: 834px;
         width: 100%;
         background: white;
         box-shadow: 0 0 0 0.75pt #d1d1d1,0 0 3pt 0.75pt #ccc;
+        padding-top: 20px;
       }
 
       iframe {
@@ -27,20 +28,24 @@
       }
       p {
         text-align: center;
+        padding: 15px;
+        margin: 0;
+        font-size: 12px;
+        font-family: 'Helvetica';
       }
     </style>
   </head>
   <body>
     <div class="iframe-wrapper">
       <iframe id="googledoc" src="/<%= hash %>/raw"></iframe>
-      <p>Published through <a href="https://gdoc.pub" target="_blank">Google Doc Publisher</a></p>
+      <p>Published with <a href="http://gdoc.pub" target="_blank">The Google Doc Publisher</a></p>
     </div>
     <script type="text/javascript">
       var iframe = document.getElementById('googledoc');
       iframe.addEventListener('load', function(e){
         document.title = iframe.contentWindow.document.title;
         setTimeout(function(){
-          var height = iframe.contentWindow.document.body.offsetHeight+40;
+          var height = iframe.contentWindow.document.body.offsetHeight+50;
           document.getElementsByClassName('iframe-wrapper')[0].setAttribute('style', 'height: '+height+'px;');
         }, 1000);
       });
