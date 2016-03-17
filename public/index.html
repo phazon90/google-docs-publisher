@@ -50,13 +50,10 @@
                           <a class="page-scroll" href="#how-it-works">How it works</a>
                       </li>
                       <li>
-                          <a class="page-scroll" href="#use-cases">Why using it</a>
-                      </li>
-                      <li>
                           <a class="page-scroll" href="#examples">Examples</a>
                       </li>
                       <li>
-                          <a class="page-scroll" href="#contact">Contact</a>
+                          <a class="page-scroll" href="#contribute">Contribute</a>
                       </li>
                   </ul>
               </div>
@@ -70,15 +67,22 @@
               <div class="header-content-inner">
                   <h1>Publish<br />good looking<br />Google Docs</h1>
                   <hr>
-                  <p class="subtitle">Google Docs are nice, but they look ugly when published to the web. Well... not anymore!</p>
-                  <a href="#how-it-works" class="btn btn-primary btn-xl page-scroll">Find Out How</a>
-                  <p>- OR -</p>
+                  <p class="subtitle">Google Docs are nice, but they look ugly when published to the web. <wbr />Well... not anymore!</p>
+                  <a href="#how-it-works" class="btn btn-primary btn-xl page-scroll calltoaction">
+                    Find Out How
+                    <span class="fa fa-angle-down"></span>
+                  </a>
+                  <p style="color: white;">- OR -</p>
                   <p>Publish your doc right now:</p>
                   <div class="urlinput">
-                    <input type="text" name="url" placeholder="https://docs.google.com/document/d/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg/pub" class="form-control" />
+                    <input id="urlinput" type="text" name="url" placeholder="https://docs.google.com/document/d/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg/pub" class="form-control" />
                     <div class="wrongurl">Wrong URL format: in Google Docs, go to <img src="/img/file.png" alt="File"> > <img src="/img/publish-to-web.png" alt="Publish to web ...">, click on <img src="/img/publish.png" alt="Publish">, copy the URL and paste it here.</div>
                   </div>
-                  <a href="#" class="btn btn-primary btn-xl docview" target="_blank">View your doc</a>
+                  <div class="docview">
+                    <a href="#" class="btn btn-primary btn-xl" target="_blank">View your doc</a>
+                    - OR - 
+                    <button class="btn btn-secondary btn-xl" data-clipboard-target="#urlinput">Copy URL</button>
+                  </div>
               </div>
           </div>
       </header>
@@ -128,7 +132,7 @@
           </div>
       </section>
 
-      <section id="use-cases">
+      <section id="examples">
           <div class="container">
               <div class="row">
                   <div class="col-lg-12 text-center">
@@ -141,41 +145,10 @@
               <div class="row">
                   <div class="col-md-4 text-center">
                       <div class="service-box">
-                          <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                          <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary"></i>
                           <h3>Your article</h3>
                           <p class="text-muted">Google Docs becomes a <a target="_blank" href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> editor instantly</p>
                       </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                      <div class="service-box">
-                          <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                          <h3>Your resume</h3>
-                          <p class="text-muted">Bring your good looking resume online instantly</p>
-                      </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                      <div class="service-box">
-                          <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                          <h3>Your cover letter</h3>
-                          <p class="text-muted">Style it just as a word document and apply online!</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <section class="no-padding-bottom bg-primary" id="examples">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 text-center">
-                      <h2 class="section-heading">Examples</h2>
-                      <hr class="primary">
-                  </div>
-              </div>
-          </div>
-          <div class="container-fluid">
-              <div class="row no-gutter">
-                  <div class="col-sm-4">
                       <a href="#" class="portfolio-box">
                           <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
@@ -195,7 +168,12 @@
                           </div>
                       </a>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-md-4 text-center">
+                      <div class="service-box">
+                          <i class="fa fa-4x fa-briefcase wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                          <h3>Your resume</h3>
+                          <p class="text-muted">Bring your good looking resume online instantly</p>
+                      </div>
                       <a href="#" class="portfolio-box">
                           <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
@@ -209,8 +187,13 @@
                               </div>
                           </div>
                       </a>
-                  </div>
-                  <div class="col-sm-4">
+                    </div>
+                  <div class="col-md-4 text-center">
+                      <div class="service-box">
+                          <i class="fa fa-4x fa-file-text-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                          <h3>Your cover letter</h3>
+                          <p class="text-muted">Style it just as a word document and apply online!</p>
+                      </div>
                       <a href="#" class="portfolio-box">
                           <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
                           <div class="portfolio-box-caption">
@@ -228,35 +211,24 @@
               </div>
           </div>
       </section>
-
-      <aside class="bg-dark">
+      <section id="contribute" class="bg-primary">
           <div class="container text-center">
-              <div class="call-to-action">
-                  <h2>And the project is open source</h2>
-                  <p>Contribute, report an issue or simply star the project to tell your support</p>
-                  <a href="https://github.com/aug-riedinger/google-docs-publisher" class="btn btn-default btn-xl wow tada">View the code</a>
-              </div>
-          </div>
-      </aside>
-
-      <section id="contact">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-8 col-lg-offset-2 text-center">
-                      <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                      <hr class="primary">
-                      <p><a href="https://github.com/aug-riedinger/google-docs-publisher/issues">Feedback</a> always appreciated.</p>
-                  </div>
-              </div>
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+            <h2>This project is open source</h2>
+            <hr class="light">
+            <p>Contribute, <a href="https://github.com/aug-riedinger/google-docs-publisher/issues" target="_blank">report an issue</a> or simply star the project to tell your support</p>
+            <a href="https://github.com/aug-riedinger/google-docs-publisher" class="btn btn-secondary btn-xl wow tada">View the code</a>
+            <p><a href="http://augustin-riedinger.fr/contact" target="_blank">Feedbacks</a> always appreciated</p>
           </div>
       </section>
-      <footer>Made with love by <a href="http://www.augustin-riedinger.fr" target="_blank">Augustin Riedinger</a></footer>
+      <footer>Made with love by <a href="http://augustin-riedinger.fr" target="_blank">Augustin Riedinger</a></footer>
 
       <script src="js/jquery.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/jquery.easing.min.js"></script>
       <script src="js/jquery.fittext.js"></script>
       <script src="js/wow.min.js"></script>
+      <script src="js/clipboard.min.js"></script>
       <script src="js/creative.js"></script>
 
   </body>

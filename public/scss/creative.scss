@@ -21,12 +21,20 @@ hr.light {
   border-color: white;
 }
 
-a {
+a:not(.btn) {
   @include transition-all;
   color: $theme-primary;
   &:hover,
   &:focus {
     color: darken($theme-primary, 10%);
+  }
+
+  .bg-primary & {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+      color: $theme-dark;
+    }
   }
 }
 
@@ -194,7 +202,7 @@ header {
       h1 {
         font-weight: 700;
         text-transform: uppercase;
-        margin-top: 0;
+        margin-top: 50px;
         margin-bottom: 0;
         line-height: 1.2em;
       }
@@ -205,29 +213,44 @@ header {
         font-weight: 300;
         color: transparentize(white, 0.30);
         font-size: 16px;
-        margin: 10px 0;
+        margin-bottom: 10px;
         &.subtitle {
-          margin-bottom: 40px;
+          margin-bottom: 30px;
         }
+      }
+
+      .calltoaction {
+        margin-bottom: 20px;
       }
 
       .urlinput {
         position: relative;
-        max-width: 803px;
+        max-width: 807px;
         margin: 20px auto;
-        
+        margin-bottom: 25px;
         input[type="text"] {
           padding: 20px;
           font-size: 16px;
           background: rgba(0, 0, 0, 0.35);
           border-radius: 50px;
           color: white;
+
+          &::selection {
+            background: $theme-primary;
+            color: white;
+          }
+          &::-moz-selection {
+            background: $theme-primary;
+            color: white;
+          }
+
+
         }
         .wrongurl {
           position: absolute;
           left: 20px;
           right: 20px;
-          height: 0;
+          max-height: 0;
           overflow: hidden;
           @include transition-all();
           background-color: transparentize($theme-primary, 0.75);
@@ -235,7 +258,8 @@ header {
           border-bottom-right-radius: 5px;
           &.unrolled {
             padding: 10px;
-            height: 75px;
+            height: auto;
+            max-height: 100px;
           }
         }
       }
@@ -246,8 +270,6 @@ header {
           opacity: 1;
         }
       }
-
-
     }
   }
   @media (min-width: 768px) {
@@ -266,8 +288,7 @@ header {
         p {
           font-size: 18px;
           max-width: 80%;
-          margin-left: auto;
-          margin-right: auto;
+          margin: 20px auto;
         }
       }
     }
@@ -371,6 +392,9 @@ header {
 .btn-primary {
   @include button-variant(white, $theme-primary, $theme-primary);
 }
+.btn-secondary {
+  @include button-variant($theme-primary, white, $theme-primary);
+}
 
 .btn {
   @include sans-serif-font;
@@ -417,15 +441,6 @@ body {
 #how-it-works {
   .carousel-control {
     background-image: none;
-  
-    // @media (min-width: 935px) {
-    //   &.right {
-    //     right: -100px;
-    //   }
-    //   &.left {
-    //     left: -100px;
-    //   }
-    // }
   }
   .carousel-caption {
     right: 0;
@@ -445,4 +460,10 @@ footer {
   padding: 10px;
   background-color: $theme-dark;
   color: white;
+}
+
+#contribute {
+  .btn {
+    margin-bottom: 20px;
+  }
 }

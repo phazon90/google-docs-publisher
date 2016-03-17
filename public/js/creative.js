@@ -45,14 +45,30 @@
   // Initialize WOW.js Scrolling Animations
   new WOW().init();
 
+  var clipboard = new Clipboard('[data-clipboard-target="#urlinput"]');
+  clipboard.on('success', function(e) {
+    console.log(e);
+    $(e.trigger).text('Copied!');
+});
+
+  $('input[name=url]').focus();
+
   $('input[name=url]').on('keyup', function(e){
-    var hash = ($(this).val().match(/https:\/\/docs\.google\.com\/document\/d\/(.+)\/pub/) || [])[1];
+    var hash = ($(this).val().match(/https:\/\/docs\.google\.com\/document\/d\/(.+)\/pub/) || $(this).val().match(/http:\/\/gdoc\.pub\/(.+)/) || [])[1];
     if (hash) {
-      $('.docview').attr('href', '/'+hash).addClass('unrolled');
+      $(this).val('http://gdoc.pub/'+hash);
+      $(this).select();
+      $('.docview').addClass('unrolled').find('a').attr('href', '/'+hash);
       $('.wrongurl').removeClass('unrolled');
+      $(this).addClass('success');
     } else {
+      $(this).removeClass('success');
       $('.docview').removeClass('unrolled');
-      $('.wrongurl').addClass('unrolled');
+      if ($(this).val().length > 3) {
+        $('.wrongurl').addClass('unrolled');
+      } else {
+        $('.wrongurl').removeClass('unrolled');
+      }
     }
   });
 
