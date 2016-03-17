@@ -69,6 +69,9 @@ aside {
 .no-padding {
   padding: 0;
 }
+.no-padding-bottom {
+  padding-bottom: 0;
+}
 
 // Navigation
 
@@ -128,14 +131,14 @@ aside {
         color: white;
       }
     }
-    &.affix-top {
-      .navbar-header .navbar-brand {
-        text-shadow: 0 0 10px $theme-dark;
-      }
-      .nav > li > a {
-        text-shadow: 0 0 10px $theme-dark;
-      }
-    }
+    // &.affix-top {
+    //   .navbar-header .navbar-brand {
+    //     text-shadow: 0 0 10px $theme-dark;
+    //   }
+    //   .nav > li > a {
+    //     text-shadow: 0 0 10px $theme-dark;
+    //   }
+    // }
     &.affix {
       background-color: white;
       // border-color: transparentize($theme-dark, 0.5);
@@ -170,7 +173,19 @@ header {
   background-image: url('../img/diary-968592_1920.jpg');
   text-align: center;
   color: white;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparentize($theme-dark, 0.6);
+    content: '';
+  }
+
   .header-content {
+    z-index: 1;
     position: relative;
     text-align: center;
     padding: 100px 15px 100px;
@@ -181,6 +196,7 @@ header {
         text-transform: uppercase;
         margin-top: 0;
         margin-bottom: 0;
+        line-height: 1.2em;
       }
       hr {
         margin: 30px auto;
@@ -189,8 +205,49 @@ header {
         font-weight: 300;
         color: transparentize(white, 0.30);
         font-size: 16px;
-        margin-bottom: 50px;
+        margin: 10px 0;
+        &.subtitle {
+          margin-bottom: 40px;
+        }
       }
+
+      .urlinput {
+        position: relative;
+        max-width: 803px;
+        margin: 20px auto;
+        
+        input[type="text"] {
+          padding: 20px;
+          font-size: 16px;
+          background: rgba(0, 0, 0, 0.35);
+          border-radius: 50px;
+          color: white;
+        }
+        .wrongurl {
+          position: absolute;
+          left: 20px;
+          right: 20px;
+          height: 0;
+          overflow: hidden;
+          @include transition-all();
+          background-color: transparentize($theme-primary, 0.75);
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          &.unrolled {
+            padding: 10px;
+            height: 75px;
+          }
+        }
+      }
+      .docview {
+        opacity: 0;
+        @include transition-all();
+        &.unrolled {
+          opacity: 1;
+        }
+      }
+
+
     }
   }
   @media (min-width: 768px) {
@@ -353,4 +410,39 @@ img::-moz-selection {
 
 body {
   -webkit-tap-highlight-color: $theme-dark;
+}
+
+
+
+#how-it-works {
+  .carousel-control {
+    background-image: none;
+  
+    // @media (min-width: 935px) {
+    //   &.right {
+    //     right: -100px;
+    //   }
+    //   &.left {
+    //     left: -100px;
+    //   }
+    // }
+  }
+  .carousel-caption {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: transparentize($theme-dark, 0.4);
+    padding: 20px;
+  }
+}
+
+#contact {
+  padding: 50px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: $theme-dark;
+  color: white;
 }
