@@ -72,5 +72,16 @@
     }
   });
 
+  $('.img-loop').each(function(i, el){
+    setInterval(function(){
+      if ($(el).find('.before').is(":visible")) {
+        $(el).find('.before').fadeOut();
+        $(el).find('.after').fadeIn();
+      } else {
+        $(el).find('.before').fadeIn();
+        $(el).find('.after').fadeOut();        
+      }
+    }, 4000);
+  });
 
 })(jQuery); // End of use strict

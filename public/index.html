@@ -29,208 +29,242 @@
 
   <body id="page-top">
 
-  <a href="https://github.com/aug-riedinger/google-docs-publisher"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <a href="https://github.com/aug-riedinger/google-docs-publisher"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
-      <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand page-scroll" href="#page-top">Google Doc Publisher</a>
-              </div>
-
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                      <li>
-                          <a class="page-scroll" href="#how-it-works">How it works</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#examples">Examples</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#contribute">Contribute</a>
-                      </li>
-                  </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-          </div>
-          <!-- /.container-fluid -->
-      </nav>
-
-      <header>
-          <div class="header-content">
-              <div class="header-content-inner">
-                  <h1>Publish<br />good looking<br />Google Docs</h1>
-                  <hr>
-                  <p class="subtitle">Google Docs are nice, but they look ugly when published to the web. <wbr />Well... not anymore!</p>
-                  <a href="#how-it-works" class="btn btn-primary btn-xl page-scroll calltoaction">
-                    Find Out How
-                    <span class="fa fa-angle-down"></span>
-                  </a>
-                  <p style="color: white;">- OR -</p>
-                  <p>Publish your doc right now:</p>
-                  <div class="urlinput">
-                    <input id="urlinput" type="text" name="url" placeholder="https://docs.google.com/document/d/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg/pub" class="form-control" />
-                    <div class="wrongurl">Wrong URL format: in Google Docs, go to <img src="/img/file.png" alt="File"> > <img src="/img/publish-to-web.png" alt="Publish to web ...">, click on <img src="/img/publish.png" alt="Publish">, copy the URL and paste it here.</div>
-                  </div>
-                  <div class="docview">
-                    <a href="#" class="btn btn-primary btn-xl" target="_blank">View your doc</a>
-                    - OR - 
-                    <button class="btn btn-secondary btn-xl" data-clipboard-target="#urlinput">Copy URL</button>
-                  </div>
-              </div>
-          </div>
-      </header>
-
-      <section class="bg-primary" id="how-it-works">
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-3 text-center">
-                <h2><div class="count">1</div> Edit your document in the google doc A4 document interface</h2>
-              </div>
-              <div class="col-sm-9">
-                <img src="/img/google-doc-example.png" class="img-responsive" alt="Google Doc Interface">
-              </div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Google Doc Publisher</a>
             </div>
-            <hr class="invisible" />
-            <div class="row">
-              <div class="col-sm-3 col-sm-push-9 text-center">
-                <h2><div class="count">2</div> Publish it to the web. Ohhh snap, the style is completely broken</h2>
-                <a href="https://docs.google.com/document/d/1OO-pC727TFEw0ffgp-l0ingL19bD-adI7Nr0BykFje8/pub" target="_blank" class="btn btn-secondary btn-xl">Browse example</a>
-              </div>
-              <div class="col-sm-9 col-sm-pull-3">
-                <img src="/img/google-doc-example-published.png" class="img-responsive" alt="Google Doc Publish to web...">
-              </div>
-            </div>
-            <hr class="invisible" />
-            <div class="row">
-              <div class="col-sm-3 text-center">
-                <h2><div class="count">3</div> Thanks to <a href="http://gdoc.pub">Gdoc.pub</a>, you get to publish it decently</h2>
-                <a href="http://gdoc.pub/1OO-pC727TFEw0ffgp-l0ingL19bD-adI7Nr0BykFje8" target="_blank" class="btn btn-secondary btn-xl">Browse example</a>
-              </div>
-              <div class="col-sm-9">
-                <img src="/img/google-doc-example-gdoc-pub.png" class="img-responsive" alt="Gdoc.pub">
-              </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="page-scroll" href="#how-it-works">How it works</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#examples">Examples</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contribute">Contribute</a>
+                    </li>
+                </ul>
             </div>
         </div>
-      </section>
+    </nav>
 
-      <section id="examples">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 text-center">
-                      <h2 class="section-heading">Publish anything in 2 clicks</h2>
-                      <hr class="primary">
+    <header>
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1>Publish<br />good looking<br />Google Docs</h1>
+          <hr>
+          <p class="subtitle">Google Docs are nice, but they look ugly when published to the web. <wbr />Well... not anymore!</p>
+          <a href="#how-it-works" class="btn btn-primary btn-xl page-scroll calltoaction">
+            Find Out How
+            <span class="fa fa-angle-down"></span>
+          </a>
+          <p style="color: white;">- OR -</p>
+          <p>Publish your doc right now:</p>
+          <div class="urlinput">
+            <input id="urlinput" type="text" name="url" placeholder="https://docs.google.com/document/d/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg/pub" class="form-control" />
+            <div class="wrongurl">Wrong URL format: in Google Docs, go to <img src="/img/file.png" alt="File"> > <img src="/img/publish-to-web.png" alt="Publish to web ...">, click on <img src="/img/publish.png" alt="Publish">, copy the URL and paste it here.</div>
+          </div>
+          <div class="docview">
+            <a href="#" class="btn btn-primary btn-xl" target="_blank">View your doc</a>
+            - OR - 
+            <button class="btn btn-secondary btn-xl" data-clipboard-target="#urlinput">Copy URL</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="how-it-works">
+      <div class="container">
+        <div class="row vertical-align">
+          <div class="col-sm-3 text-center">
+            <h2><div class="count">1</div> Edit your document in the google doc A4/Letter document interface</h2>
+          </div>
+          <div class="col-sm-9">
+            <img src="/img/google-doc-example.png" class="img-responsive" alt="Google Doc Interface">
+          </div>
+        </div>
+        <hr class="invisible" />
+        <div class="row vertical-align">
+          <div class="col-sm-3 col-sm-push-9 text-center">
+            <h2><div class="count">2</div> Publish it to the web...</h2>
+          </div>
+          <div class="col-sm-4 col-sm-pull-3">
+            <img src="/img/publish-to-web-dropdown.png" class="img-responsive img-center" alt="Google Doc Publish to web dropdown...">
+          </div>
+          <div class="col-sm-5 col-sm-pull-3">
+            <img src="/img/publish-to-web-modal.png" class="img-responsive img-center" alt="Google Doc Publish to web modal...">
+          </div>
+        </div>
+        <hr class="invisible" />
+        <div class="row vertical-align">
+          <div class="col-sm-3 text-center">
+            <h2><div class="count">3</div> Ohhh snap, the style is completely broken</h2>
+            <a href="https://docs.google.com/document/d/1OO-pC727TFEw0ffgp-l0ingL19bD-adI7Nr0BykFje8/pub" target="_blank" class="btn btn-secondary btn-xl">Browse example</a>
+          </div>
+          <div class="col-sm-9">
+            <a href="https://docs.google.com/document/d/1OO-pC727TFEw0ffgp-l0ingL19bD-adI7Nr0BykFje8/pub" target="_blank">
+              <img src="/img/google-doc-example-published.png" class="img-responsive" alt="Google Doc Publish to web render...">
+            </a>
+          </div>
+        </div>
+        <hr class="invisible" />
+        <div class="row vertical-align">
+          <div class="col-sm-3 col-sm-push-9 text-center">
+            <h2><div class="count">4</div> Thanks to <a href="http://gdoc.pub">gdoc.pub</a>, you get to publish it decently <span class="fa fa-smile-o"></span></h2>
+            <a href="http://gdoc.pub/1OO-pC727TFEw0ffgp-l0ingL19bD-adI7Nr0BykFje8" target="_blank" class="btn btn-secondary btn-xl">Browse example</a>
+          </div>
+          <div class="col-sm-9 col-sm-pull-3">
+            <a href="http://gdoc.pub/1OO-pC727TFEw0ffgp-l0ingL19bD-adI7Nr0BykFje8" target="_blank">
+              <img src="/img/google-doc-example-gdoc-pub.png" class="img-responsive" alt="Gdoc.pub">            
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">Publish anything in 2 clicks</h2>
+                  <hr class="primary">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary"></i>
+              <h3>Your article</h3>
+              <p class="text-muted">Google Docs becomes a <a target="_blank" href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> editor instantly</p>
+            </div>
+            <div class="portfolio-box">
+              <div class="img-loop">
+                <div class="before">
+                  <p><em>Before</em></p>
+                  <img src="/img/article-google-doc.png" class="img-responsive" alt="Article published by google">
+                </div>
+                <div class="after" style="display: none;">
+                  <p><em>After</em></p>
+                  <img src="/img/article-gdoc-pub.png" class="img-responsive" alt="Article published with gdoc.pub">
+                </div>                        
+              </div>
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category">
+                    Article
                   </div>
-              </div>
-          </div>
-          <div class="container">
-              <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="service-box">
-                      <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary"></i>
-                      <h3>Your article</h3>
-                      <p class="text-muted">Google Docs becomes a <a target="_blank" href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> editor instantly</p>
-                    </div>
-                    <div class="portfolio-box">
-                      <img src="/img/article-gdoc-pub.png" data-before-src="/img/article-google-doc.png" class="img-responsive" alt="Article">
-                      <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                          <div class="project-category">
-                            Article
-                          </div>
-                          <a href="https://docs.google.com/document/d/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw/pub" target="_blank" class="before">
-                            <span class="fa fa-link fa-2x"></span>
-                            Before
-                          </a>
-                          <a href="http://gdoc.pub/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw" target="_blank" class="after">
-                            <span class="fa fa-link fa-2x"></span>
-                            After
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="example text-muted">Example</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="service-box">
-                      <i class="fa fa-4x fa-briefcase wow bounceIn text-primary"></i>
-                      <h3>Your resume</h3>
-                      <p class="text-muted">Bring your good looking resume online instantly</p>
-                    </div>
-                    <div class="portfolio-box">
-                      <img src="/img/resume-gdoc-pub.png" data-before-src="/img/resume-google-doc.png" class="img-responsive" alt="Resume">
-                      <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                          <div class="project-category">
-                            Resume
-                          </div>
-                          <a href="https://docs.google.com/document/d/1lhIQmky05-KV3Elfnk1tTM7syjawodSoXa5AEhXT0fY/pub" target="_blank" class="before">
-                            <span class="fa fa-link fa-2x"></span>
-                            Before
-                          </a>
-                          <a href="http://gdoc.pub/1lhIQmky05-KV3Elfnk1tTM7syjawodSoXa5AEhXT0fY" target="_blank" class="after">
-                            <span class="fa fa-link fa-2x"></span>
-                            After
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="example text-muted">Example</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="service-box">
-                      <i class="fa fa-4x fa-file-text-o wow bounceIn text-primary"></i>
-                      <h3>Your cover letter</h3>
-                      <p class="text-muted">Style it just as a word document and apply online immediately!</p>
-                    </div>
-                    <div class="portfolio-box">
-                      <img src="/img/cover-letter-gdoc-pub.png" data-before-src="/img/cover-letter-google-doc.png" class="img-responsive" alt="Cover Letter">
-                      <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                          <div class="project-category">
-                            Cover Letter
-                          </div>
-                          <a href="https://docs.google.com/document/d/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw/pub" target="_blank" class="before">
-                            <span class="fa fa-link fa-2x"></span>
-                            Before
-                          </a>
-                          <a href="http://gdoc.pub/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw" target="_blank" class="after">
-                            <span class="fa fa-link fa-2x"></span>
-                            After
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="example text-muted">Example</p>
+                  <a href="https://docs.google.com/document/d/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw/pub" target="_blank" class="before">
+                    <span class="fa fa-link fa-2x"></span>
+                    Before
+                  </a>
+                  <a href="http://gdoc.pub/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw" target="_blank" class="after">
+                    <span class="fa fa-link fa-2x"></span>
+                    After
+                  </a>
                 </div>
               </div>
+            </div>
+            <p class="example text-muted">Example</p>
           </div>
-      </section>
-      <section id="contribute" class="bg-primary">
-          <div class="container text-center">
-            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-            <h2>This project is open source</h2>
-            <hr class="light">
-            <p>Contribute, <a href="https://github.com/aug-riedinger/google-docs-publisher/issues" target="_blank">report an issue</a> or simply star the project to tell your support</p>
-            <a href="https://github.com/aug-riedinger/google-docs-publisher" class="btn btn-secondary btn-xl wow tada">View the code</a>
-            <p><a href="http://augustin-riedinger.fr/contact" target="_blank">Feedbacks</a> always appreciated</p>
+          <div class="col-md-4 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-briefcase wow bounceIn text-primary"></i>
+              <h3>Your resume</h3>
+              <p class="text-muted">Bring your good looking resume online instantly</p>
+            </div>
+            <div class="portfolio-box">
+              <img src="/img/resume-gdoc-pub.png" data-next-src="/img/resume-google-doc.png" class="img-responsive" alt="Resume">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category">
+                    Resume
+                  </div>
+                  <a href="https://docs.google.com/document/d/1lhIQmky05-KV3Elfnk1tTM7syjawodSoXa5AEhXT0fY/pub" target="_blank" class="before">
+                    <span class="fa fa-link fa-2x"></span>
+                    Before
+                  </a>
+                  <a href="http://gdoc.pub/1lhIQmky05-KV3Elfnk1tTM7syjawodSoXa5AEhXT0fY" target="_blank" class="after">
+                    <span class="fa fa-link fa-2x"></span>
+                    After
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="example text-muted">Example</p>
           </div>
-      </section>
-      <footer>Made with love by <a href="http://augustin-riedinger.fr" target="_blank">Augustin Riedinger</a></footer>
+          <div class="col-md-4 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-file-text-o wow bounceIn text-primary"></i>
+              <h3>Your cover letter</h3>
+              <p class="text-muted">Style it just as a word document and apply online immediately!</p>
+            </div>
+            <div class="portfolio-box">
+              <img src="/img/cover-letter-gdoc-pub.png" data-next-src="/img/cover-letter-google-doc.png" class="img-responsive" alt="Cover Letter">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category">
+                    Cover Letter
+                  </div>
+                  <a href="https://docs.google.com/document/d/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw/pub" target="_blank" class="before">
+                    <span class="fa fa-link fa-2x"></span>
+                    Before
+                  </a>
+                  <a href="http://gdoc.pub/1gPSQtxB9kKYemhjPxIhM4pSpoRGQvc-nmpG_KZyAevw" target="_blank" class="after">
+                    <span class="fa fa-link fa-2x"></span>
+                    After
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="example text-muted">Example</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contribute" class="bg-primary">
+      <div class="container text-center">
+        <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+        <h2>This project is open source</h2>
+        <hr class="light">
+        <p>Contribute, <a href="https://github.com/aug-riedinger/google-docs-publisher/issues" target="_blank">report an issue</a> or simply star the project to tell your support</p>
+        <a href="https://github.com/aug-riedinger/google-docs-publisher" class="btn btn-secondary btn-xl wow tada">View the code</a>
+        <p><a href="http://augustin-riedinger.fr/contact" target="_blank">Feedbacks</a> always appreciated</p>
+      </div>
+    </section>
+    <footer>Made with love by <a href="http://augustin-riedinger.fr" target="_blank">Augustin Riedinger</a></footer>
 
-      <script src="js/jquery.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/jquery.easing.min.js"></script>
-      <script src="js/jquery.fittext.js"></script>
-      <script src="js/wow.min.js"></script>
-      <script src="js/clipboard.min.js"></script>
-      <script src="js/creative.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/creative.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-36223212-9', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
   </body>
 

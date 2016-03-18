@@ -530,3 +530,12 @@ footer {
     margin-bottom: 20px;
   }
 }
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+img.img-center {
+  margin: auto;
+}
