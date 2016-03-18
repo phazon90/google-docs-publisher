@@ -21,7 +21,7 @@ hr.light {
   border-color: white;
 }
 
-a:not(.btn-primary) {
+a {
   @include transition-all;
   color: $theme-primary;
   &:hover,
@@ -29,7 +29,7 @@ a:not(.btn-primary) {
     color: darken($theme-primary, 10%);
   }
 
-  .bg-primary & {
+  .bg-primary &:not(.btn) {
     color: white;
     text-decoration: underline;
     &:hover {
