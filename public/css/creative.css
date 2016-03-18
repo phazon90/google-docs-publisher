@@ -14,17 +14,17 @@ hr {
 hr.light {
   border-color: white; }
 
-a:not(.btn) {
+a:not(.btn-primary) {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
   color: #4285F4; }
-  a:not(.btn):hover, a:not(.btn):focus {
+  a:not(.btn-primary):hover, a:not(.btn-primary):focus {
     color: #1266f1; }
-  .bg-primary a:not(.btn) {
+  .bg-primary a:not(.btn-primary) {
     color: white;
     text-decoration: underline; }
-    .bg-primary a:not(.btn):hover {
+    .bg-primary a:not(.btn-primary):hover {
       color: #222; }
 
 h1,
@@ -246,7 +246,8 @@ header {
   max-width: 650px;
   height: 255px;
   overflow: hidden;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 20px; }
   .portfolio-box .portfolio-box-caption {
     color: white;
     opacity: 0;
@@ -454,3 +455,33 @@ footer {
 
 img.img-center {
   margin: auto; }
+
+.img-loop {
+  position: relative; }
+  .img-loop .before, .img-loop .after {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 400px; }
+    .img-loop .before a.img-hover, .img-loop .after a.img-hover {
+      position: relative;
+      display: block; }
+      .img-loop .before a.img-hover:after, .img-loop .after a.img-hover:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(66, 133, 244, 0.8);
+        content: '\f0c1';
+        font: normal normal normal 14px/1 'FontAwesome';
+        color: white;
+        display: none;
+        z-index: 1;
+        font-size: 40px;
+        line-height: 180px; }
+      .img-loop .before a.img-hover:hover:after, .img-loop .after a.img-hover:hover:after {
+        display: block; }
+    .img-loop .before .btn, .img-loop .after .btn {
+      margin-top: 20px;
+      width: 100px; }

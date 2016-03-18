@@ -73,15 +73,22 @@
   });
 
   $('.img-loop').each(function(i, el){
-    setInterval(function(){
+
+    var toggleFade = function() {
       if ($(el).find('.before').is(":visible")) {
         $(el).find('.before').fadeOut();
         $(el).find('.after').fadeIn();
+        $(el).find('.btn-before').removeClass('btn-primary');
+        $(el).find('.btn-after').addClass('btn-primary');
       } else {
         $(el).find('.before').fadeIn();
         $(el).find('.after').fadeOut();        
+        $(el).find('.btn-after').removeClass('btn-primary');
+        $(el).find('.btn-before').addClass('btn-primary');
       }
-    }, 4000);
+    };
+    toggleFade();
+    setInterval(toggleFade, 4000);
   });
 
 })(jQuery); // End of use strict
