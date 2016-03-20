@@ -33,6 +33,26 @@
         font-size: 12px;
         font-family: 'Helvetica';
       }
+
+      @media print {
+        body {
+          background: none;
+        }
+        p {
+          display: none;
+        }
+        .iframe-wrapper {
+          height: auto;
+          max-width: none;
+          box-shadow: none;
+          padding-top: 0;
+          width: 100%;          
+        }
+        iframe {
+          width: 100%;
+        }
+      }
+
     </style>
   </head>
   <body>
