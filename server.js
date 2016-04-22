@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 
 var processGoogleHTML = function(html) {
   return html
+    .replace(/<a\s/ig, '<a target="_blank" ')
     .replace(/(<script[\s\S]+?<\/script>)/gi, '')
     .replace(/(<div id="header">[\s\S]+?<\/div>)/, '')
     .replace(/(<div id="footer">[\s\S]+?<\/div>)/, '')
