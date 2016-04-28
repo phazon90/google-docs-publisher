@@ -1,9 +1,9 @@
 var express = require('express');
 var ejs = require('ejs');
-var https = require('https');
 var memjs = require('memjs');
 var path = require('path');
 
+var request = require('request');
 
 var app = express();
 var mc = memjs.Client.create()
@@ -22,18 +22,12 @@ var processGoogleHTML = function(html) {
 };
 
 var generateIframe = function(hash, callback) {
-  https.get('https://docs.google.com/document/d/'+hash+'/pub', function(crawled) {
-    var html = '';
-    crawled.on('data', function(data){
-      html = html + data.toString();
-    });
-    crawled.on('end', function(){
-      var result = processGoogleHTML(html);
-      mc.set(hash, result, function(err, val) {
-        console.log('Wrote', hash);
-      }, 30);
-      callback(result);
-    });
+  request.get({url: 'https://docs.google.com/document/d/'+hash+'/pub', encoding: 'utf-8'}, function(error, response, body) {
+    var result = processGoogleHTML(body);
+    mc.set(hash, result, function(err, val) {
+      console.log('Wrote', hash);
+    }, 30);
+    callback(result);
   }).end();
 }
 
@@ -54,6 +48,7 @@ var getIframeContent = function(hash, useCache, callback) {
 
 app.get('/:hash/raw', function(req, res){
   getIframeContent(req.params.hash, true, function(html){
+    res.header('Content-Type', 'text/html; charset=utf-8');
     res.write(html);
     res.end();
   });
