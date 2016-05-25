@@ -32,6 +32,13 @@
         margin: 0;
         font-size: 12px;
         font-family: 'Helvetica';
+        max-width: 700px;
+        margin: auto;
+        line-height: 1.4em;
+      }
+
+      p.warning {
+        font-size: 0.7em;
       }
 
       @media print {
@@ -46,7 +53,7 @@
           max-width: none;
           box-shadow: none;
           padding-top: 0;
-          width: 100%;          
+          width: 100%;
         }
         iframe {
           width: 100%;
@@ -59,6 +66,10 @@
     <div class="iframe-wrapper">
       <iframe id="googledoc" src="/<%= hash %>/raw"></iframe>
       <p>Published with <a href="http://gdoc.pub" target="_blank">The Google Doc Publisher</a></p>
+      <p class="warning">
+        <strong>This website is not phishing nor stilling any information from you</strong>.<br/>
+        If you are reading this page, it means the document owner <strong>deliberately</strong> published its content to the web with <a href="http://gdoc.pub" target="_blank">gdoc.pub</a><br/> and <a href="http://gdoc.pub/#terms" target="_blank">agreed with the terms</a> at the same time.
+      </p>
     </div>
     <script type="text/javascript">
       var iframe = document.getElementById('googledoc');
