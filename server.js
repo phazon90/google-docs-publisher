@@ -6,7 +6,8 @@ var path = require('path');
 var request = require('request');
 
 var app = express();
-var mc = memjs.Client.create()
+
+var mc = memjs.Client.create((process.env.MEMCACHED_1_PORT || '').replace('tcp://', ''))
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname);
