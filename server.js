@@ -55,13 +55,19 @@ app.get('/:hash/raw', function(req, res){
   });
 });
 
+var blacklist = ['1e4AhY4FDrskammCpkd4T2WidrG3LUnh5mSA4Oe8NiSk'];
+
 app.get('/:hash', function(req, res){
-  getIframeContent(req.params.hash, true, function(html){
-    res.render('googledoc', {
-      title: (html.match(/<title>(.+)<\/title>/i) || [])[0],
-      hash: req.params.hash,
+  if (blacklist.indexOf(req.params.hash) === -1) {
+    getIframeContent(req.params.hash, true, function(html){
+      res.render('googledoc', {
+        title: (html.match(/<title>(.+)<\/title>/i) || [])[0],
+        hash: req.params.hash,
+      });
     });
-  });
+  } else {
+    res.render('blacklist');
+  }
 });
 
 app.listen(app.get('port'), function() {
