@@ -40,6 +40,9 @@ p {
   line-height: 1.5;
   margin-bottom: 20px; }
 
+.small, small {
+  font-size: 70%; }
+
 .bg-primary {
   background-color: #4285F4; }
 

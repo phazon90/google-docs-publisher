@@ -55,9 +55,6 @@
                     <li>
                         <a class="page-scroll" href="#contribute">Contribute</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#terms">Terms</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -74,9 +71,10 @@
             <span class="fa fa-angle-down"></span>
           </a>
           <p style="color: white;">- OR -</p>
-          <p>Publish your doc right now:</p>
           <p>
-            <small>(By pasting your link, you <a href="#terms" class="page-scroll">agree with terms</a>)</small>
+            Publish your doc right now:
+            <br />
+            <small>(By pasting your link, you <a href="#terms" data-toggle="modal" data-target="#terms">agree with terms</a>)</small>
           </p>
           <div class="urlinput">
             <input id="urlinput" type="text" name="url" placeholder="https://docs.google.com/document/d/1srdnlG4BarbmjoHYIsHhUbYsTvbAP5t-sgfJKwZ9yrg/pub" class="form-control" />
@@ -227,25 +225,33 @@
         <p><a href="http://augustin-riedinger.fr/contact" target="_blank">Feedbacks</a> always appreciated</p>
       </div>
     </section>
-    <section id="terms">
-      <div class="container">
-        <h2 class="text-center">Terms and Conditions</h2>
-        <p>
-          Due to recent complaints about this app supposedly <a href="https://en.wikipedia.org/wiki/Phishing">phishing</a> information from users, clarifications have sadly become mandatory.
-        </p>
-        <p>
-          By using this service, I, the document owner of a <a href="https://www.google.com/docs/about/">Google Docs</a> previously "Published to the web" with the so-called feature, and having for public url "https://docs.google.com/document/d/&lt;HASH&gt;/pub", agree that:
-        </p>
-        <ul>
-          <li>the generated url "http://gdoc.pub/&lt;HASH&gt;" will be publicly accessible, as well as the original is</li>
-          <li>this url will <b>never</b> be shared by <a href="http://gdoc.pub">http://gdoc.pub</a> without a previous agreement from the document owner</li>
-          <li>this app does not collect any user data besides regular analytics</li>
-          <li>this url might be seen by app administrator for analytics purpose only</li>
-        </ul>
-        <p>If despite those terms, this website feels malicious to you, please <a href="http://augustin-riedinger.fr/contact" target="_blank">contact me</a> before reporting anything, <b>because it is not</b>.</p>
-      </div>
-    </section>
     <footer>Made with love by <a href="https://twitter.com/Aug_Riedinger" target="_blank">Augustin Riedinger</a></footer>
+
+    <div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="termsLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="termsLabel">Terms &amp; Conditions</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              By using this service, I, the document owner of a <a href="https://www.google.com/docs/about/">Google Docs</a> previously "Published to the web" with the so-called feature, and having for public url "https://docs.google.com/document/d/&lt;HASH&gt;/pub", agree that:
+            </p>
+            <ul>
+              <li>the generated url "http://gdoc.pub/&lt;HASH&gt;" will be publicly accessible, as well as the original is</li>
+              <li>this url will <b>never</b> be shared by <a href="http://gdoc.pub">http://gdoc.pub</a> without a previous agreement from the document owner</li>
+              <li>this app does not collect any user data besides regular analytics</li>
+              <li>this url might be seen by app administrator for analytics or debugging purpose only</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">I understand</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>

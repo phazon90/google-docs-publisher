@@ -87,8 +87,10 @@
         $(el).find('.btn-before').addClass('btn-primary');
       }
     };
-    toggleFade();
-    setInterval(toggleFade, 4000);
+    setTimeout(function(){
+      toggleFade();
+      setInterval(toggleFade, 4500);
+    }, i*1500);
   });
 
 })(jQuery); // End of use strict

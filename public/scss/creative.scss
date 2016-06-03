@@ -53,6 +53,10 @@ p {
   margin-bottom: 20px;
 }
 
+.small, small {
+  font-size: 70%;
+}
+
 .bg-primary {
   background-color: $theme-primary;
 }
@@ -572,10 +576,6 @@ img.img-center {
         }
       }
     }
-    // img.img-responsive {
-    //   height: 300px;
-    //   width: auto;
-    // }
     .btn {
       margin-top: 20px;
       width: 100px;      
