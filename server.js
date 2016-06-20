@@ -16,14 +16,17 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 
 var processGoogleHTML = function(html) {
   return html
-    .replace(/<a\s/ig, '<a target="_blank" ')
-    .replace(/(<script[\s\S]+?<\/script>)/gi, '')
-    .replace(/(<div id="header">[\s\S]+?<\/div>)/, '')
-    .replace(/(<div id="footer">[\s\S]+?<\/div>)/, '')
+  .replace(/<a\s/ig, '<a target="_blank" ')
+  .replace(/(<script[\s\S]+?<\/script>)/gi, '')
+  .replace(/(<div id="header">[\s\S]+?<\/div>)/, '')
+  .replace(/(<div id="footer">[\s\S]+?<\/div>)/, '')
 };
 
 var generateIframe = function(hash, callback) {
-  request.get({url: 'https://docs.google.com/document/d/'+hash+'/pub', encoding: 'utf-8'}, function(error, response, body) {
+  request.get({url: 'https://docs.google.com/document/d/'+hash+'/pub', encoding: 'utf-8', followRedirect: false}, function(error, response, body) {
+    if (response.statusCode >= 300) {
+      return callback(null);
+    }
     var result = processGoogleHTML(body);
     mc.set(hash, result, function(err, val) {
       console.log('Wrote', hash);
@@ -60,10 +63,14 @@ var blacklist = ['1e4AhY4FDrskammCpkd4T2WidrG3LUnh5mSA4Oe8NiSk'];
 app.get('/:hash', function(req, res){
   if (blacklist.indexOf(req.params.hash) === -1) {
     getIframeContent(req.params.hash, true, function(html){
-      res.render('googledoc', {
-        title: (html.match(/<title>(.+)<\/title>/i) || [])[0],
-        hash: req.params.hash,
-      });
+      if (html) {
+        res.render('googledoc', {
+          title: (html.match(/<title>(.+)<\/title>/i) || [])[0],
+          hash: req.params.hash,
+        });
+      } else {
+        res.render('notavailable');
+      }
     });
   } else {
     res.render('blacklist');
