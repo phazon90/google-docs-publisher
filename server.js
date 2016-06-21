@@ -58,7 +58,10 @@ app.get('/:hash/raw', function(req, res){
   });
 });
 
-var blacklist = ['1e4AhY4FDrskammCpkd4T2WidrG3LUnh5mSA4Oe8NiSk'];
+var blacklist = [
+  '1e4AhY4FDrskammCpkd4T2WidrG3LUnh5mSA4Oe8NiSk',
+  '19PVPMGZ68gkORN0bbMoU_9xK3KjDUFmdr7KzgaIETG8'
+];
 
 app.get('/:hash', function(req, res){
   if (blacklist.indexOf(req.params.hash) === -1) {
