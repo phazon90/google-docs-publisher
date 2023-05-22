@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aug-riedinger/google-docs-publisher.git"
+    "url": "git+https://github.com/phazon90/google-docs-publisher"
   },
   "keywords": [
     "google",
@@ -20,9 +20,9 @@
   "author": "Augustin Riedinger",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aug-riedinger/google-docs-publisher/issues"
+    "url": "https://github.com/phazon90/google-docs-publisher/issues"
   },
-  "homepage": "https://github.com/aug-riedinger/google-docs-publisher#readme",
+  "homepage": "https://github.com/phazon90/google-docs-publisher#readme",
   "dependencies": {
     "ejs": "^2.4.1",
     "express": "^4.13.4",
