@@ -64,7 +64,7 @@
     } else {
       $(this).removeClass('success');
       $('.docview').removeClass('unrolled');
-      if ($(this).val().length > 11) {
+      if ($(this).val().length > 3) {
         $('.wrongurl').addClass('unrolled');
       } else {
         $('.wrongurl').removeClass('unrolled');
