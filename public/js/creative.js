@@ -54,9 +54,9 @@
   $('input[name=url]').focus();
 
   $('input[name=url]').on('keyup', function(e){
-    var hash = ($(this).val().match(/https:\/\/docs\.google\.com\/document\/d\/(.+)\/pub/) || $(this).val().match(/http:\/\/gdoc.kusztech\.us\/(.+)/) || [])[1];
+    var hash = ($(this).val().match(/https:\/\/docs\.google\.com\/document\/d\/(.+)\/pub/) || $(this).val().match(/https:\/\/gdoc\.kusztech\.us\/(.+)/) || [])[1];
     if (hash) {
-      $(this).val('http://gdoc.kusztech.us/'+hash);
+      $(this).val('https://gdoc.kusztech.us/'+hash);
       $(this).select();
       $('.docview').addClass('unrolled').find('a').attr('href', '/'+hash);
       $('.wrongurl').removeClass('unrolled');
