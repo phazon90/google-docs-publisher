@@ -13,7 +13,7 @@ services:
       PORT: 3000
   memcached:
     hostname: memcached
-    image: memcached
+    image: memcached:1.5.21
     environment:
       # Memcached memory limit in megabytes
       - MEMCACHED_MEMORY_LIMIT=128
